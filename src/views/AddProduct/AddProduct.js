@@ -38,7 +38,7 @@ const AddProduct = props => {
     height: '',
     depth: '',
     categoryId: '',
-    modelURL: ''
+    modelLink: ''
   });
   const [method, setMethod] = useState('url');
   const [categories, setCategories] = useState([]);
@@ -103,6 +103,17 @@ const AddProduct = props => {
 
   const onModelTexturesChange = event => {
     setProductModelTextures(event.target.files);
+  };
+
+  const onModelLinkSubmit = async () => {
+    try {
+      await axios.post(`/products/${productId}/modelLink`, {
+        modelLink: values.modelLink
+      });
+      alert('URL Added');
+    } catch (error) {
+      alert(error);
+    }
   };
 
   const onModelsUpload = async () => {
@@ -430,10 +441,10 @@ const AddProduct = props => {
                         fullWidth
                         label="Model URL"
                         margin="dense"
-                        name="modelURL"
+                        name="modelLink"
                         onChange={handleChange}
                         required
-                        value={values.modelURL}
+                        value={values.modelLink}
                         variant="outlined"
                       />
                       <br />
@@ -441,7 +452,7 @@ const AddProduct = props => {
                       {saveState === 2 && (
                         <Button
                           color="primary"
-                          onClick={onModelTexturesUpload}
+                          onClick={onModelLinkSubmit}
                           variant="contained">
                           Save
                         </Button>

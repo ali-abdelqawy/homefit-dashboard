@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Link as RouterLink, withRouter } from 'react-router-dom';
+import { useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Gate = props => {
+const Gate = () => {
   useEffect(() => {
     const getUserToken = async () => {
-      const token = await localStorage.getItem('userToken');
+      const token = localStorage.getItem('userToken');
       if (!token) {
         window.location.href = '/sign-in';
       } else {

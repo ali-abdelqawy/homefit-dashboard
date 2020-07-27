@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
@@ -10,9 +10,7 @@ import {
   Divider,
   Grid,
   Button,
-  TextField,
-  TextareaAutosize,
-  Typography
+  TextField
 } from '@material-ui/core';
 import axios from '../../api';
 

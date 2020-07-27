@@ -27,7 +27,7 @@ const ViewProduct = props => {
       setProductCategory(response.data.name);
     };
     fetchProduct();
-  }, []);
+  }, [props.match.params.id]);
   const deleteProduct = id => {
     const url = `/products/${product._id}`;
     axios

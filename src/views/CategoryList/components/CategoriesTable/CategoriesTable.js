@@ -43,8 +43,6 @@ const CategoriesTable = props => {
   const classes = useStyles();
 
   const [categories, setCategories] = useState([]);
-  const [] = useState(10);
-  const [] = useState(0);
 
   useEffect(() => {
     const getCategories = async () => {
