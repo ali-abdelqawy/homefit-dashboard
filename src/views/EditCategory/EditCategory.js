@@ -10,9 +10,7 @@ import {
   Divider,
   Grid,
   Button,
-  TextField,
-  TextareaAutosize,
-  Typography
+  TextField
 } from '@material-ui/core';
 import axios from '../../api';
 
@@ -38,7 +36,8 @@ const EditCategory = props => {
     };
 
     getCategory();
-  }, []);
+  }, [props.match.params.id]);
+
   const handleChange = event => {
     setValues({
       ...values,

@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 
-import {
-  ProductsTable,
-  ProductsToolbar,
-  CategoriesToolbar,
-  CategoriesTable
-} from './components';
-import mockData from './data';
+import { CategoriesToolbar, CategoriesTable } from './components';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,13 +15,12 @@ const useStyles = makeStyles(theme => ({
 const CategoryList = () => {
   const classes = useStyles();
 
-
   return (
     <div className={classes.root}>
       <div className={classes.content}>
         <CategoriesToolbar />
         <br />
-        <CategoriesTable/>
+        <CategoriesTable />
       </div>
     </div>
   );

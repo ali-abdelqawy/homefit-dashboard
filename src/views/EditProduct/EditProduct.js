@@ -11,7 +11,6 @@ import {
   Grid,
   Button,
   TextField,
-  TextareaAutosize,
   Typography
 } from '@material-ui/core';
 import axios from '../../api';
@@ -37,9 +36,8 @@ const EditProduct = props => {
   });
 
   const [categories, setCategories] = useState([]);
-  const [saveState, setSaveState] = useState(1);
+  const [saveState] = useState(1);
   const [productImage, setProductImage] = useState(null);
-  const [productId, setProductId] = useState('');
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -54,7 +52,7 @@ const EditProduct = props => {
       setValues({ ...data });
     };
     fetchProduct();
-  }, []);
+  }, [props.match.params.id]);
 
   const handleChange = event => {
     setValues({
