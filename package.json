@@ -1,5 +1,4 @@
 {
-  "homepage": "http://alikhaledahmed.github.io/homefit-dashboard",
   "name": "react-material-dashboard",
   "author": "DeviasIO",
   "email": "contact@devias.io",
@@ -10,9 +9,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
