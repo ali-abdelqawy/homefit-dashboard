@@ -26,18 +26,30 @@ const useStyles = makeStyles(() => ({
 const AddProduct = props => {
   const { className, ...rest } = props;
 
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const { data } = await axios.get('/categories');
+        setCategories(data);
+        setValues({ ...values, categoryId: data[0]._id });
+      } catch (error) {
+        alert(error);
+      }
+    };
+    fetchCategories();
+  }, []);
+
   const classes = useStyles();
 
   const [values, setValues] = useState({
     name: '',
     description: '',
     price: '',
-    color: '',
+    color: colors[0].value,
     width: '',
     height: '',
     depth: '',
-    categoryId: '',
-    modelLink: ''
+    categoryId: ''
   });
   const [method, setMethod] = useState('url');
   const [categories, setCategories] = useState([]);
@@ -46,19 +58,7 @@ const AddProduct = props => {
   const [productModelFiles, setProductModelFiles] = useState([]);
   const [productModelTextures, setProductModelTextures] = useState([]);
   const [productId, setProductId] = useState('');
-
-  useEffect(() => {
-    axios
-      .get('/categories')
-      .then(function(response) {
-        // handle success
-        setCategories(response.data);
-      })
-      .catch(function(error) {
-        // handle error
-        console.log(error);
-      });
-  }, []);
+  const [modelLink, setModelLink] = useState('');
 
   const handleChange = event => {
     setValues({
@@ -76,7 +76,12 @@ const AddProduct = props => {
       setSaveState(2);
     } catch (error) {
       alert(error);
+      console.log(error);
     }
+  };
+
+  const onModelLinkChange = event => {
+    setModelLink(event.target.value);
   };
 
   const onFileChange = event => {
@@ -107,7 +112,7 @@ const AddProduct = props => {
   const onModelLinkSubmit = async () => {
     try {
       await axios.post(`/products/${productId}/modelLink`, {
-        modelLink: values.modelLink
+        modelLink
       });
       alert('URL Added');
     } catch (error) {
@@ -441,9 +446,9 @@ const AddProduct = props => {
                         label="Model URL"
                         margin="dense"
                         name="modelLink"
-                        onChange={handleChange}
+                        onChange={onModelLinkChange}
                         required
-                        value={values.modelLink}
+                        value={modelLink}
                         variant="outlined"
                       />
                       <br />
