@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/homefit-dashboard/static/css/main.cbdf4783.chunk.css",
+    "main.js": "/homefit-dashboard/static/js/main.ad1a26fd.chunk.js",
+    "main.js.map": "/homefit-dashboard/static/js/main.ad1a26fd.chunk.js.map",
+    "runtime-main.js": "/homefit-dashboard/static/js/runtime-main.c059d4fe.js",
+    "runtime-main.js.map": "/homefit-dashboard/static/js/runtime-main.c059d4fe.js.map",
+    "static/css/2.18fb2ca0.chunk.css": "/homefit-dashboard/static/css/2.18fb2ca0.chunk.css",
+    "static/js/2.dd7cfaef.chunk.js": "/homefit-dashboard/static/js/2.dd7cfaef.chunk.js",
+    "static/js/2.dd7cfaef.chunk.js.map": "/homefit-dashboard/static/js/2.dd7cfaef.chunk.js.map",
+    "index.html": "/homefit-dashboard/index.html",
+    "precache-manifest.7e47028259ad802750af95467a6bd5d6.js": "/homefit-dashboard/precache-manifest.7e47028259ad802750af95467a6bd5d6.js",
+    "service-worker.js": "/homefit-dashboard/service-worker.js",
+    "static/css/2.18fb2ca0.chunk.css.map": "/homefit-dashboard/static/css/2.18fb2ca0.chunk.css.map",
+    "static/css/main.cbdf4783.chunk.css.map": "/homefit-dashboard/static/css/main.cbdf4783.chunk.css.map",
+    "static/js/2.dd7cfaef.chunk.js.LICENSE.txt": "/homefit-dashboard/static/js/2.dd7cfaef.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c059d4fe.js",
+    "static/css/2.18fb2ca0.chunk.css",
+    "static/js/2.dd7cfaef.chunk.js",
+    "static/css/main.cbdf4783.chunk.css",
+    "static/js/main.ad1a26fd.chunk.js"
+  ]
+}
