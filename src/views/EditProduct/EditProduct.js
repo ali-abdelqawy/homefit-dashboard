@@ -79,7 +79,6 @@ const EditProduct = props => {
       window.location.reload(false);
     } catch (error) {
       alert(error);
-      console.log(error);
     }
   };
 
